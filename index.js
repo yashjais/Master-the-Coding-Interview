@@ -1,0 +1,1 @@
+const myArray = require('./myArray');
