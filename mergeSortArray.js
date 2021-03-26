@@ -2,6 +2,7 @@ function mergeSortArray (arr1, arr2) {
   const mergedArray = [];
   if (!Array.isArray(arr1) || !Array.isArray(arr2)) return false;
   // also have to check if the element inside the array is a number or not
+  // also have to check for empty array
 
   let index1 = 0, index2 = 0, i = 0;
   // i is just a number we will use for running the loops
@@ -27,7 +28,7 @@ function mergeSortArray (arr1, arr2) {
   console.log('mergedArray', mergedArray);
 }
 
-mergeSortArray([0,2,31], [4,6,30])
+mergeSortArray([0,3,4,31], [4,6,30])
 // [0 3 4 6 30 31]
 
 // brute force solution
