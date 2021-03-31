@@ -51,7 +51,7 @@ class HashTable {
   }
 
   entries() {
-    // same as entrid
+    // same as entries // few changes will be there when we return the data
   }
 }
 
