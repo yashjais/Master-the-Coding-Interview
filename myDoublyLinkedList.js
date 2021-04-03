@@ -39,6 +39,30 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  traverseList(index) {
+    let counter = 0;
+    let currentNode = this.head;
+    while(counter !== index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
+
+  insert(value, index) {
+    const newNode = new Node(value);
+    const node = newNode.node;
+    const prevNode = this.traverseList(index - 1);
+    const nextNode = prevNode.next;
+    prevNode.next = node;
+    node.next = nextNode;
+    node.prev = prevNode;
+    nextNode.prev = newNode;
+    this.length++;
+    // console.log('prevNode', prevNode);
+    return this;
+  }
 }
 
 const myLinkedList = new DoublyLinkedList(10);
@@ -46,4 +70,5 @@ myLinkedList.append(11);
 myLinkedList.append(16);
 myLinkedList.append(32);
 myLinkedList.prepend(2);
+myLinkedList.insert(3,1)
 console.log(util.inspect(myLinkedList, false, null, true))
