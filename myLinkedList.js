@@ -76,15 +76,67 @@ class LinkedList {
     }
     return arr;
   }
+
+  /* // my implementation
+  reverse() {
+    let newList = {};
+    let counter = 0;
+    let currentNode = this.head;
+    while(counter !== this.length) {
+      const newNode = {
+        value: currentNode.value,
+        next: null,
+      }
+      if (counter === 0) {
+        newList = newNode
+        this.tail = newNode;
+      } else {
+        newNode.next = newList;
+        newList = newNode;
+      }
+      currentNode = currentNode.next
+      counter++;
+    }
+    this.head = newList;
+    return this;
+    // console.log(util.inspect(newList, false, null, true))
+  }
+  */
+
+  reverse() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    this.tail = first;
+    let second = first.next;
+    while(second) {
+      console.log('first', first)
+      console.log('second', second)
+      const temp = second.next;
+      console.log('temp', temp)
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+    return this;
+  }
 };
 
 /* [10, 5, 16, 12] */
+// 10 5 16
+// 5 16 12
+// 16 12 null
 const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.append(12);
+myLinkedList.reverse();
 // myLinkedList.prepend(11);
 // myLinkedList.insert(99, 2);
-myLinkedList.remove(1);
+// myLinkedList.remove(1);
 // console.log(util.inspect(myLinkedList, false, null, true))
-console.log(myLinkedList.printList());
+// console.log(myLinkedList.printList());
+console.log(util.inspect(myLinkedList, false, null, true))
