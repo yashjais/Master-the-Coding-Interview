@@ -5,8 +5,9 @@
 // const myStack = require('./DataStructures/stack');
 // const myStack = require('./DataStructures/stack-2');
 // const myQueue = require('./DataStructures/queue');
+const BST = require('./DataStructures/BinarySearchTree');
 
 // const exercise = require('./Exercises/exercise-1');
 // const mergeSortArray = require('./Exercises/mergeSortArray');
 // const reverseString = require('./Exercises/reverseString');
-const queuesUsingStacks = require('./Exercises/queues-using-stacks');
+// const queuesUsingStacks = require('./Exercises/queues-using-stacks');
