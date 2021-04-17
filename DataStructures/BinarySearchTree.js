@@ -32,8 +32,21 @@ class BinarySearchTree {
       }
     }
   }
-  lookup() {
-    // do something
+  lookup(value) {
+    if (!this.root || !value) return null;
+    let pointer = this.root;
+    while(true) {
+      if (!pointer) return false;
+      if (pointer.value === value) {
+        return true;
+      }
+      else if (pointer.value > value) {
+        pointer = pointer.left;
+      }
+      else if (pointer.value < value) {
+        pointer = pointer.right;
+      }
+    }
   }
   remove() {
     // do something
@@ -50,8 +63,9 @@ bst.insert(15);
 bst.insert(120);
 bst.insert(110);
 bst.insert(121);
+console.log(bst.lookup(23));
 // console.log(JSON.stringify(traverse(bst.root)));
-console.log(util.inspect(bst, false, null, true));
+// console.log(util.inspect(bst, false, null, true));
 
 function traverse (node) {
   const tree = { value: node.value };
