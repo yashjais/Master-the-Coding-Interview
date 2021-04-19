@@ -38,7 +38,7 @@ class BinarySearchTree {
     while(true) {
       if (!pointer) return false;
       if (pointer.value === value) {
-        return true;
+        return pointer;
       }
       else if (pointer.value > value) {
         pointer = pointer.left;
@@ -47,23 +47,82 @@ class BinarySearchTree {
         pointer = pointer.right;
       }
     }
+    return false;
   }
-  remove() {
-    // do something
+  remove(value) {
+    if (!this.root || !value) return false;
+    let currentNode = this.root;
+    let parentNode = null;
+    
+    while (currentNode) {
+      if (value < currentNode.value) {
+        parentNode = currentNode;
+        currentNode = currentNode.left;
+      }
+      else if (value > currentNode.value) {
+        parentNode = currentNode;
+        currentNode = currentNode.right;
+      }
+      else if (value === currentNode.value) {
+        console.log(parentNode, currentNode)
+        // value matched, now magic will happen here
+
+        // case 1 -- no successor(right child)
+        if (currentNode.right === null) {
+          if (parentNode === null) {
+            this.root = currentNode.left;
+          }
+          else {
+            // checking if the current node is in right or left of parent node
+            if (parentNode.right.value === value) {
+              parentNode.right = currentNode.left;
+            } else {
+              parentNode.left = currentNode.left;
+            }
+          }
+          return this;
+        }
+
+        // case 2 -- right child doesn't have a left child
+        else if (currentNode.right.left === null) {
+          if (parentNode === null) {
+            this.root = currentNode.right;
+          }
+          else {
+            // checking if the current node is in right or left of parent node
+            if (parentNode.right.value === value) {
+              parentNode.right = currentNode.right;
+            } else {
+              parentNode.left = currentNode.right;
+            }
+          }
+          return this;
+        }
+
+        // case 3 -- right have a left child
+        // now there will be three cases within
+        else {
+
+        }
+      }
+
+    }
+    return false;
   }
 }
 
 const bst = new BinarySearchTree();
-bst.insert(9);
-bst.insert(4);
-bst.insert(20);
-bst.insert(1);
-bst.insert(6);
-bst.insert(15);
-bst.insert(120);
-bst.insert(110);
-bst.insert(121);
-console.log(bst.lookup(23));
+bst.insert(62);
+bst.insert(68);
+bst.insert(70);
+// bst.insert(70);
+// bst.insert(73);
+// bst.insert(72);
+// bst.insert(70);
+// console.log(util.inspect(bst, false, null, true))
+// bst.remove(78);
+console.log(util.inspect(bst.remove(62), false, null, true));
+// console.log(bst.lookup(23));
 // console.log(JSON.stringify(traverse(bst.root)));
 // console.log(util.inspect(bst, false, null, true));
 
