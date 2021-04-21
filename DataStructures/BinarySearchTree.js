@@ -64,7 +64,6 @@ class BinarySearchTree {
         currentNode = currentNode.right;
       }
       else if (value === currentNode.value) {
-        console.log(parentNode, currentNode)
         // value matched, now magic will happen here
 
         // case 1 -- no successor(right child)
@@ -100,10 +99,32 @@ class BinarySearchTree {
         }
 
         // case 3 -- right have a left child
-        // now there will be three cases within
+        // now we've to iterate the left child upto where the node doesn't have a left child
         else {
+          //find the Right child's left most child
+          let leftmost = currentNode.right.left;
+          let leftmostParent = currentNode.right;
+          while(leftmost.left !== null) {
+            leftmostParent = leftmost;
+            leftmost = leftmost.left;
+          }
+          
+          //Parent's left subtree is now leftmost's right subtree
+          leftmostParent.left = leftmost.right;
+          leftmost.left = currentNode.left;
+          leftmost.right = currentNode.right;
 
+          if(parentNode === null) {
+            this.root = leftmost;
+          } else {
+            if(currentNode.value < parentNode.value) {
+              parentNode.left = leftmost;
+            } else if(currentNode.value > parentNode.value) {
+              parentNode.right = leftmost;
+            }
+          }
         }
+        return true;
       }
 
     }
@@ -111,20 +132,20 @@ class BinarySearchTree {
   }
 }
 
+
 const bst = new BinarySearchTree();
 bst.insert(62);
 bst.insert(68);
+bst.insert(64);
+bst.insert(71);
+bst.insert(72);
+bst.insert(69);
 bst.insert(70);
-// bst.insert(70);
-// bst.insert(73);
-// bst.insert(72);
-// bst.insert(70);
-// console.log(util.inspect(bst, false, null, true))
-// bst.remove(78);
-console.log(util.inspect(bst.remove(62), false, null, true));
+bst.remove(68);
+// console.log(util.inspect(bst.remove(67), false, null, true));
 // console.log(bst.lookup(23));
 // console.log(JSON.stringify(traverse(bst.root)));
-// console.log(util.inspect(bst, false, null, true));
+console.log(util.inspect(bst, false, null, true));
 
 function traverse (node) {
   const tree = { value: node.value };
