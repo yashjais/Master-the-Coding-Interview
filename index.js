@@ -5,7 +5,8 @@
 // const myStack = require('./DataStructures/stack');
 // const myStack = require('./DataStructures/stack-2');
 // const myQueue = require('./DataStructures/queue');
-const BST = require('./DataStructures/BinarySearchTree');
+// const BST = require('./DataStructures/BinarySearchTree');
+const graph = require('./DataStructures/graph');
 
 // const exercise = require('./Exercises/exercise-1');
 // const mergeSortArray = require('./Exercises/mergeSortArray');
