@@ -8,9 +8,11 @@
 // const BST = require('./DataStructures/BinarySearchTree');
 // const graph = require('./DataStructures/graph');
 
-const recursion = require('./Algorithms/Recursion');
+// const recursion = require('./Algorithms/Recursion');
 
 // const exercise = require('./Exercises/exercise-1');
 // const mergeSortArray = require('./Exercises/mergeSortArray');
 // const reverseString = require('./Exercises/reverseString');
 // const queuesUsingStacks = require('./Exercises/queues-using-stacks');
+
+const recursionExercise = require('./Exercises/recursionExercise');
