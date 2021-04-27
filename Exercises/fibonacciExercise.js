@@ -5,8 +5,7 @@
 // the pattern of sequence is that each value is the sum of previous two values. EX: if N=5--> 3+2
 
 function fibonacciIterative(n) {
-  if (n === 0) return 0;
-  if (n === 1) return 1;
+  if (n < 2) return n;
   let lastValue = 1, secondLastValue = 0;
   let counter = 2;
   while (counter < n) {
@@ -19,14 +18,9 @@ function fibonacciIterative(n) {
 }
 
 function fibonacciRecursive(n) {
-  if (n === 1) {
-    return 1;
-  }
-  if (n === 0) {
-    return 0;
-  }
+  if (n < 2) return n;
   return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
 }
 
-// console.log(fibonacciIterative(10));
-console.log(fibonacciRecursive(11));
+console.log(fibonacciIterative(11));
+// console.log(fibonacciRecursive(11));
