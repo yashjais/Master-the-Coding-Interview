@@ -134,22 +134,37 @@ class BinarySearchTree {
 
 
 const bst = new BinarySearchTree();
-bst.insert(62);
-bst.insert(68);
-bst.insert(64);
-bst.insert(71);
-bst.insert(72);
-bst.insert(69);
-bst.insert(70);
-bst.remove(68);
+bst.insert(9);
+bst.insert(4);
+bst.insert(20);
+bst.insert(1);
+bst.insert(6);
+bst.insert(15);
+bst.insert(170);
+// bst.remove(68);
 // console.log(util.inspect(bst.remove(67), false, null, true));
 // console.log(bst.lookup(23));
 // console.log(JSON.stringify(traverse(bst.root)));
-console.log(util.inspect(bst, false, null, true));
+// console.log(util.inspect(bst, false, null, true));
 
+//     9
+//  4    20
+//1  6 15  170
 function traverse (node) {
   const tree = { value: node.value };
   tree.left = node.left === null ? null : traverse(node.left);
   tree.right = node.right === null ? null : traverse(node.right);
   return tree;
 }
+
+// a recursive case
+// a base case
+
+// function traverse (node) {
+//   const tree = { value: node.value };
+//   tree.left = node.left === null ? null : traverse(node.left);
+//   tree.right = node.right === null ? null : traverse(node.right);
+//   return tree;
+// }
+
+console.log(traverse(bst.root))

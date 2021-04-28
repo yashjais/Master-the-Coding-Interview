@@ -16,4 +16,5 @@
 // const queuesUsingStacks = require('./Exercises/queues-using-stacks');
 
 // const recursionExercise = require('./Exercises/recursionExercise');
-const fibonacciExercise = require('./Exercises/fibonacciExercise');
+// const fibonacciExercise = require('./Exercises/fibonacciExercise');
+const reverseString = require('./Exercises/reverseString1.js');
