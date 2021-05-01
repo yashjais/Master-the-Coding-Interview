@@ -19,6 +19,7 @@
 // const fibonacciExercise = require('./Exercises/fibonacciExercise');
 // const reverseString = require('./Exercises/reverseString1.js');
 
-// const bubbleSort = require('./Sorting/BubbleSort');
-// const selectionSort = require('./Sorting/SelectionSort');
-const insertionSort = require('./Sorting/insertionSort');
+// const bubbleSort = require('./Sorting/bubbleSort');
+// const selectionSort = require('./Sorting/selectionSort');
+// const insertionSort = require('./Sorting/insertionSort');
+const merbeSort = require('./Sorting/mergeSort');
