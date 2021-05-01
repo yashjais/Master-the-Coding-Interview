@@ -19,4 +19,5 @@
 // const fibonacciExercise = require('./Exercises/fibonacciExercise');
 // const reverseString = require('./Exercises/reverseString1.js');
 
-const bubbleSort = require('./Sorting/BubbleSort');
+// const bubbleSort = require('./Sorting/BubbleSort');
+const selectionSort = require('./Sorting/SelectionSort');
