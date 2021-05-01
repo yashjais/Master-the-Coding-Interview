@@ -20,4 +20,5 @@
 // const reverseString = require('./Exercises/reverseString1.js');
 
 // const bubbleSort = require('./Sorting/BubbleSort');
-const selectionSort = require('./Sorting/SelectionSort');
+// const selectionSort = require('./Sorting/SelectionSort');
+const insertionSort = require('./Sorting/insertionSort');
