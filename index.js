@@ -22,4 +22,5 @@
 // const bubbleSort = require('./Sorting/bubbleSort');
 // const selectionSort = require('./Sorting/selectionSort');
 // const insertionSort = require('./Sorting/insertionSort');
-const merbeSort = require('./Sorting/mergeSort');
+// const merbeSort = require('./Sorting/mergeSort');
+const quickSort = require('./Sorting/quickSort');
