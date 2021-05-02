@@ -23,20 +23,27 @@ function merge (left, right) {
   // comparision
   const returnArr = [];
   let i = 0, j = 0;
-  while(returnArr.length < left.length + right.length) {
-      console.log('in the while loop', returnArr.length, left.length, right.length, returnArr)
+  while(left.length !== 0 && right.length !== 0) {
+    console.log('in the while loop', returnArr.length,i, j, left.length, right.length, returnArr)
     if (j === right.length) {
-      returnArr.push(left[0], left[1]);
+      const slicedArr = left.splice(i, left.length);
+      returnArr.push(...slicedArr);
+      left.length = 0;
     }
     else if (i === left.length) {
-      returnArr.push(right[0], right[1])
+      const slicedArr = right.splice(j, right.length);
+      returnArr.push(...slicedArr);
+      right.length = 0;
     }
     else if (left[i] < right[j]) {
       returnArr.push(left[i]);
+      // left.splice(0, 1);
       i++;
     }
     else {
       returnArr.push(right[j]);
+      // right.splice(0, 1);
+
       j++;
     }
   }
@@ -44,5 +51,6 @@ function merge (left, right) {
   return returnArr;
 }
 
-mergeSort(numbers);
-console.log(numbers);
+console.log(mergeSort(numbers));
+// i'm returning a new array
+// console.log('numbers', numbers);
