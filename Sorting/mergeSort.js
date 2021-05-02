@@ -1,5 +1,5 @@
 // const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4];
-const numbers = [99, 44, 6, 2, 1, 5, 63, 87];
+const numbers = [99, 44, 6, 2, 1, 5, 63]
 // what if the array is odd number or when we split the array the results are odd?
 // let's take one step at a time.. first work on the comparision function, then think about this
 
@@ -17,14 +17,13 @@ function mergeSort (arr) {
     mergeSort(right)
   );
 }
-
+/**
 function merge (left, right) {
   console.log('left, right', left, right)
   // comparision
   const returnArr = [];
   let i = 0, j = 0;
   while(left.length !== 0 && right.length !== 0) {
-    console.log('in the while loop', returnArr.length,i, j, left.length, right.length, returnArr)
     if (j === right.length) {
       const slicedArr = left.splice(i, left.length);
       returnArr.push(...slicedArr);
@@ -50,7 +49,25 @@ function merge (left, right) {
   console.log('return arr', returnArr)
   return returnArr;
 }
+ */
+
+// andrea implemention
+function merge (left, right) {
+  const result = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex]);
+      leftIndex++;
+    } else {
+      result.push(right[rightIndex]);
+      rightIndex++;
+    }
+  }
+  console.log(left, right, leftIndex, rightIndex);
+  return result.concat(left.splice(leftIndex)).concat(right.splice(rightIndex));
+}
 
 console.log(mergeSort(numbers));
-// i'm returning a new array
-// console.log('numbers', numbers);
+// i'm returning a new array - andrea is also returning new array!
