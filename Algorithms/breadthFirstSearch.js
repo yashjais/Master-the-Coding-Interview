@@ -57,6 +57,23 @@ class BreadthFirstSearch {
     }
     return list;
   }
+  breadthFirstSearchR(queue, list) {
+    // base case
+    if (!queue.length) {
+      return list;
+    }
+    let currentNode = queue.shift();
+    // console.log(currentNode.value);
+    if (currentNode.left) {
+      queue.push(currentNode.left); 
+    }
+    if (currentNode.right) {
+      queue.push(currentNode.right);
+    }
+    // recursive case
+    list.push(currentNode.value);
+    return this.breadthFirstSearchR(queue, list);
+  }
 }
 
 //      9
@@ -71,5 +88,6 @@ bfs.insert(2);
 bfs.insert(5);
 bfs.insert(12);
 bfs.insert(10);
-console.log(bfs.breadthFirstSearch());
+// console.log(bfs.breadthFirstSearch());
+console.log(bfs.breadthFirstSearchR([bfs.root], []));
 // console.log('bfs', JSON.stringify(bfs, null, 2));
