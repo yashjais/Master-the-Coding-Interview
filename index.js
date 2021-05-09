@@ -9,7 +9,8 @@
 // const graph = require('./DataStructures/graph');
 
 // const recursion = require('./Algorithms/recursion');
-const breadthFirstSearch = require('./Algorithms/breadthFirstSearch');
+// const breadthFirstSearch = require('./Algorithms/breadthFirstSearch');
+const depthFirstSearch = require('./Algorithms/depthFirstSearch');
 
 // const exercise = require('./Exercises/exercise-1');
 // const mergeSortArray = require('./Exercises/mergeSortArray');
