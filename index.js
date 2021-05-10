@@ -10,7 +10,7 @@
 
 // const recursion = require('./Algorithms/recursion');
 // const breadthFirstSearch = require('./Algorithms/breadthFirstSearch');
-const depthFirstSearch = require('./Algorithms/depthFirstSearch');
+// const depthFirstSearch = require('./Algorithms/depthFirstSearch');
 
 // const exercise = require('./Exercises/exercise-1');
 // const mergeSortArray = require('./Exercises/mergeSortArray');
@@ -20,6 +20,7 @@ const depthFirstSearch = require('./Algorithms/depthFirstSearch');
 // const recursionExercise = require('./Exercises/recursionExercise');
 // const fibonacciExercise = require('./Exercises/fibonacciExercise');
 // const reverseString = require('./Exercises/reverseString1.js');
+const validateBFS = require('./Exercises/validateBST');
 
 // const bubbleSort = require('./Sorting/bubbleSort');
 // const selectionSort = require('./Sorting/selectionSort');
