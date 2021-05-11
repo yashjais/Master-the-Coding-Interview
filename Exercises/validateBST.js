@@ -111,4 +111,4 @@ const bfs = new BreadthFirstSearch();
 // console.log(bfs.breadthFirstSearch());
 // console.log(bfs.breadthFirstSearchR([bfs.root], []));
 // console.log('bfs', JSON.stringify(bfs, null, 2));
-console.log('validate', bfs.vBST( [5,1,4,null,null,3,6] ));
+console.log('validate', bfs.vBST([5,1,4,null,null,3,6]));
