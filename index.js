@@ -28,4 +28,5 @@
 // const merbeSort = require('./Sorting/mergeSort');
 // const quickSort = require('./Sorting/quickSort');
 
-const memoization = require('./DynamicProgramming/memoization-1');
+// const memoization = require('./DynamicProgramming/memoization-1');
+const memoization = require('./DynamicProgramming/memoization-2');
