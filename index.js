@@ -20,10 +20,12 @@
 // const recursionExercise = require('./Exercises/recursionExercise');
 // const fibonacciExercise = require('./Exercises/fibonacciExercise');
 // const reverseString = require('./Exercises/reverseString1.js');
-const validateBFS = require('./Exercises/validateBST');
+// const validateBFS = require('./Exercises/validateBST');
 
 // const bubbleSort = require('./Sorting/bubbleSort');
 // const selectionSort = require('./Sorting/selectionSort');
 // const insertionSort = require('./Sorting/insertionSort');
 // const merbeSort = require('./Sorting/mergeSort');
 // const quickSort = require('./Sorting/quickSort');
+
+const memoization = require('./DynamicProgramming/memoization-1');
