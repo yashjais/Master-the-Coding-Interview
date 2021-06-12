@@ -29,4 +29,5 @@
 // const quickSort = require('./Sorting/quickSort');
 
 // const memoization = require('./DynamicProgramming/memoization-1');
-const memoization = require('./DynamicProgramming/memoization-2');
+// const memoization = require('./DynamicProgramming/memoization-2');
+const fibMemoization = require('./DynamicProgramming/fib-memoization');
